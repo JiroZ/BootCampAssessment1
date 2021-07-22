@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebApp</title>
+
+    <style>
+        body {
+            width: 70%;
+            margin: auto;
+            background-color: slategray;
+        }
+
+        header {
+            height: 200px;
+            background-color: #103261;
+        }
+
+        .container {
+            background-color: whitesmoke;
+            border-radius: 30px;
+            margin: 2%;
+
+        }
+
+        div.imageSelect {
+            float: left;
+            width: 30%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        img.imageSelect {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        img.imageView {
+            margin: 20px
+        }
+
+        img.grayScale {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+
+        img.blur {
+            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            filter: blur(5px);
+        }
+
+        div.filterBar {
+            position: absolute;
+            z-index: 2;
+        }
+
+        div.imageView {
+            float: right;
+            width: 60%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        div.imageSelectOptions {
+            position: static;
+            background-color: white;
+            margin: 10px;
+        }
+
+        div.imagePreviewContainer {
+            overflow: auto;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="h1" style="color: #B1C5E0">Boot Camp Assigment</h1>
+</header>
+
+<div class="container imageSelect">
+    <div id="imageBox" class="container-lg">
+
+        <div id="imageContainer">
+
+            <div class="imageSelectOptions">
+                <input id="imageSelector" type="file" accept="image/*" multiple>
+            </div>
+            <div id="imageListDiv">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="container imageView">
+    <div class="container-lg">
+
+        <div class="imagePreviewContainer" id="imagePreviewContainer">
+            <img class="imageView" id="imagePreview" src="#" alt="Image View">
+
+            <div class="filterBar">
+                <button class="btn-primary" id="grayScaleButton">Gray Scale</button>
+                <button class="btn-primary" id="blurButton">Blur Scale</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+
+</footer>
+</body>
+
+
+<script src="javascript/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>
