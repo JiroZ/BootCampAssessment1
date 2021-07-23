@@ -26,14 +26,6 @@
             background-color: whitesmoke;
             border-radius: 30px;
             margin: 2%;
-
-        }
-
-        div.imageSelect {
-            float: left;
-            width: 30%;
-            overflow-y: auto;
-            overflow-x: hidden;
         }
 
         img.imageSelect {
@@ -42,22 +34,27 @@
             border-radius: 10px;
         }
 
-        img.imageView {
-            margin: 20px
-        }
-
         img.grayScale {
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
         }
 
         img.blur {
-            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            -webkit-filter: blur(5px);
             filter: blur(5px);
         }
 
+        img.contrast {
+            -webkit-filter: contrast(50%);
+            filter: contrast(50%);
+        }
+
+        button.filterBar {
+            border-radius: 5px;
+        }
+
         div.filterBar {
-            position: absolute;
+            margin: 25px;
             z-index: 2;
         }
 
@@ -66,6 +63,10 @@
             width: 60%;
             overflow-y: auto;
             overflow-x: hidden;
+        }
+
+        img.imageView {
+            margin: 20px
         }
 
         div.imageSelectOptions {
@@ -78,6 +79,15 @@
             overflow: auto;
             height: 1000px;
         }
+
+        div.imageSelect {
+            float: left;
+            width: 30%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 500px;
+        }
+
     </style>
 </head>
 <body>
@@ -87,7 +97,7 @@
 </header>
 
 <div class="container imageSelect">
-    <div id="imageBox" class="container-lg">
+        <div id="imageBox" class="container-lg">
 
         <div id="imageContainer">
 
@@ -103,14 +113,19 @@
 </div>
 <div class="container imageView">
     <div class="container-lg">
-
         <div class="imagePreviewContainer" id="imagePreviewContainer">
             <img class="imageView" id="imagePreview" src="#" alt="Image View">
+        </div>
 
-            <div class="filterBar">
-                <button class="btn-primary" id="grayScaleButton">Gray Scale</button>
-                <button class="btn-primary" id="blurButton">Blur Scale</button>
-            </div>
+        <div id="filterBar" class="filterBar">
+            <button class="btn-primary filterBar" id="grayScaleButton">Gray Scale</button>
+            <button class="btn-primary filterBar" id="blurButton">Blur Scale</button>
+            <button class="btn-primary filterBar" id="contrastButton">Contrast Scale</button>
+
+<!--            <label for="customRange1" class="form-label">Example range</label>-->
+<!--            <input type="range" class="form-range" id="customRange1">-->
+
+            <button style="margin-left: 30px" class="btn-primary filterBar" id="saveButton">Save Image</button>
         </div>
     </div>
 </div>
